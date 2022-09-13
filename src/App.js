@@ -6,7 +6,9 @@ function App() {
    * useState() hooks で状態を管理.
    * - 引数に初期値を設定できる.
    **/
-  const [todos, setTodos] = useState(["Todo1", "Todo2"]);
+  const [todos, setTodos] = useState([
+    { name: "todo", id: 1, completed: false },
+  ]);
 
   return (
     <div className="App">
