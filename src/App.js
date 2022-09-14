@@ -29,6 +29,15 @@ function App() {
     todoNameRef.current.value = null;
   };
 
+  // チェックボックスの状態を変更するための関数.
+  const toggleTodo = (id) => {
+    // 一旦 todos をコピーする. 理由は状態変数で管理しているから.
+    // @todo: ミュータブル・イミュータブルについて調べる.
+    const newTodos = [...todos];
+    // todo の id とマッチしてるものだけ todo に入れる.
+    const todo = newTodos.find((todo) => todo.id === id);
+  };
+
   return (
     <div className="App">
       <TodoList todos={todos} />
