@@ -7,7 +7,7 @@ import Todo from "Todo";
  **/
 const TodoList = ({ todos }) => {
   // 本来は好ましくないリレー.
-  return todos.map((todo) => <Todo todo={todo} key={todo} />);
+  return todos.map((todo) => <Todo todo={todo} key={todo.id} />);
 };
 
 export default TodoList;
