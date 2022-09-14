@@ -36,11 +36,14 @@ function App() {
     const newTodos = [...todos];
     // todo の id とマッチしてるものだけ todo に入れる.
     const todo = newTodos.find((todo) => todo.id === id);
+    // 値の更新. チェックの入れ替えのため反転させるだけでOK.
+    todo.completed = !todo.completed;
+    setTodos(newTodos);
   };
 
   return (
     <div className="App">
-      <TodoList todos={todos} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
       <input type="text" ref={todoNameRef} />
       <button onClick={handleAddTodo}>タスクを追加</button>
       <button>完了したタスクを削除</button>
