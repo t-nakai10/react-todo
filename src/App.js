@@ -18,12 +18,15 @@ function App() {
    */
   const todoNameRef = useRef();
 
-  const handleAddTodo = () => {};
+  const handleAddTodo = () => {
+    // button をクリックすることで input の値を取得できる.
+    const name = todoNameRef.current.value;
+  };
 
   return (
     <div className="App">
-      <TodoList todos={todos} ref={todoNameRef} />
-      <input type="text" />
+      <TodoList todos={todos} />
+      <input type="text" ref={todoNameRef} />
       <button onClick={handleAddTodo}>タスクを追加</button>
       <button>完了したタスクを削除</button>
       <div>
