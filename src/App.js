@@ -32,7 +32,7 @@ function App() {
   // チェックボックスの状態を変更するための関数.
   const toggleTodo = (id) => {
     // 一旦 todos をコピーする. 理由は状態変数で管理しているから.
-    // @todo: ミュータブル・イミュータブルについて調べる.
+    // 元の状態を変更しないイミュータブルな操作.
     const newTodos = [...todos];
     // todo の id とマッチしてるものだけ todo に入れる.
     const todo = newTodos.find((todo) => todo.id === id);
