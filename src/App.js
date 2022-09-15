@@ -39,12 +39,18 @@ function App() {
     setTodos(newTodos);
   };
 
+  const handleDeleteTodo = () => {
+    // 終わってないもので新しく作る.削除というか作り直しの意味のほうが近いがボタン的に削除なので関数名はそのままにしておく.
+    const newTodos = todos.filter((todo) => !todo.completed);
+    setTodos(newTodos);
+  };
+
   return (
     <div className="App">
       <TodoList todos={todos} toggleTodo={toggleTodo} />
       <input type="text" ref={todoNameRef} />
       <button onClick={handleAddTodo}>タスクを追加</button>
-      <button>完了したタスクを削除</button>
+      <button onClick={handleDeleteTodo}>完了したタスクを削除</button>
       <div>
         <p>残りのタスク: {todos.filter((todo) => !todo.completed).length}</p>
       </div>
