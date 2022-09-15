@@ -7,9 +7,7 @@ function App() {
    * useState() hooks で状態を管理.
    * - 引数に初期値を設定できる.
    **/
-  const [todos, setTodos] = useState([
-    { name: "todo", id: 1, completed: false },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   /**
    * useRef() は DOM の監視.
