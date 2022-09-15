@@ -20,6 +20,8 @@ function App() {
   const handleAddTodo = () => {
     // button をクリックすることで input の値を取得できる.
     const name = todoNameRef.current.value;
+    // 空は追加しない.
+    if (name === "") return;
     setTodos((prevTodos) => {
       // スプレッド構文. 前のTodoに対して右側のオブジェクトを追加する.
       return [...prevTodos, { id: uuidv4(), name: name, completed: false }];
